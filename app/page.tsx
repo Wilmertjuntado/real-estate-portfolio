@@ -77,6 +77,8 @@ export default function Home() {
         </section>
 
         <Divider />
+            <p className="text-sm text-slate-600">programforwil@gmail.com</p>
+
 
         {/* 1) WHO I HELP */}
         <Section title="1) Who I Help">
