@@ -1,61 +1,45 @@
-import React from "react";
+
 import Image from "next/image";
-
-import "./globals.css";
-import type { Metadata } from "next";
-
-export const metadata: Metadata = {
-  title: "Wilmer Juntado | Real Estate Lead & CRM Systems",
-  description:
-    "Speed-to-lead, GoHighLevel CRM setup, and follow-up automations for real estate teams.",
-  icons: {
-    icon: [
-      { url: "/favicon.ico" },
-      { url: "/icon-32x32.png", sizes: "32x32", type: "image/png" },
-      { url: "/icon-16x16.png", sizes: "16x16", type: "image/png" },
-    ],
-    apple: "/apple-touch-icon.png",
-  },
-  manifest: "/site.webmanifest",
-};
-
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
-  return (
-    <html lang="en">
-      <body>{children}</body>
-    </html>
-  );
-}
-
-
+import ThemeToggle from "./components/ThemeToggle";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-white text-slate-900">
+    <main className="relative min-h-screen bg-slate-50 text-slate-900 dark:bg-slate-900 dark:text-slate-100">
+
+      <div className="absolute right-6 top-6 z-50">
+  <ThemeToggle />
+</div>
+  
+
+
       {/* Sticky CTA bar */}
       <StickyCta />
 
       {/* Page container */}
-      <div className="mx-auto max-w-3xl px-5 py-12">
+      <div className="mx-auto max-w-3xl rounded-3xl bg-white px-6 py-14 shadow-sm dark:bg-slate-800 dark:shadow-none">
+
+
         {/* HERO (Above the fold) */}
-        <section className="mb-10">
+        <section className="mb-14">
+
           <div className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
             {/* Text */}
             <div className="flex-1">
 
-          <p className="mb-3 inline-flex items-center rounded-full border border-slate-200 px-3 py-1 text-sm text-slate-700">
-            GoHighLevel (LeadConnector) • Real Estate Lead Systems
+         <p className="mb-4 inline-flex items-center rounded-full border border-slate-200 bg-slate-100 px-3 py-1 text-sm 
+">
+
+             GoHighLevel (LeadConnector) • Real Estate Lead Systems
           </p>
 
-          <h1 className="text-3xl font-semibold leading-tight tracking-tight sm:text-4xl">
+          <h1 className="text-3xl sm:text-4xl font-semibold tracking-tight leading-tight text-slate-900">
+
             Speed-to-Lead + Follow-Up Systems for Real Estate Teams
           </h1>
 
-          <p className="mt-4 text-base leading-relaxed text-slate-700">
+          <p className="mt-4 max-w-xl text-base leading-relaxed 
+">
+
             I help real estate teams stop losing Zillow/FB/PPC leads by building a clean GoHighLevel pipeline, instant
             lead routing, and automated follow-ups until the lead books.
           </p>
@@ -63,13 +47,16 @@ export default function Home() {
           <div className="mt-6 flex flex-col gap-3 sm:flex-row">
             <a
               href="#cta"
-              className="inline-flex items-center justify-center rounded-xl bg-slate-900 px-5 py-3 text-sm font-medium text-white hover:bg-slate-800"
+              className="inline-flex items-center justify-center rounded-xl bg-slate-900 px-6 py-3 text-sm font-medium text-white shadow-sm hover:bg-slate-800 transition"
+
             >
               Apply to Work With Me
             </a>
             <a
               href="#proof"
-              className="inline-flex items-center justify-center rounded-xl border border-slate-300 px-5 py-3 text-sm font-medium text-slate-900 hover:bg-slate-50"
+              className="inline-flex items-center justify-center rounded-xl border border-slate-300 px-6 py-3 text-sm font-medium 
+ hover:bg-slate-50 transition"
+
             >
               See Proof / Samples
             </a>
@@ -90,30 +77,30 @@ export default function Home() {
           </div>
               </div>
 
-    {/* Profile photo */}
-    <div className="shrink-0">
-      <div className="overflow-hidden rounded-full border border-slate-200">
-        <Image
-          src="/profile.jpg"
-          alt="Profile photo"
-          width={160}
-          height={160}
-          className="h-40 w-40 object-cover"
-          priority
-        />
-      </div>
-    </div>
-  </div>
+                    {/* Profile photo */}
+                    <div className="shrink-0">
+                    <div className="overflow-hidden rounded-full border border-slate-200">
+                        <Image
+                        src="/profile.jpg"
+                        alt="Profile photo"
+                        width={160}
+                        height={160}
+                        className="h-40 w-40 object-cover"
+                        priority
+                        />
+                    </div>
+                    </div>
+                </div>
 
         </section>
 
-        <Divider />
-            <p className="text-sm text-slate-600">programforwil@gmail.com</p>
+        <Divider />           
 
 
         {/* 1) WHO I HELP */}
         <Section title="1) Who I Help">
-          <ul className="list-disc space-y-2 pl-5 text-slate-700">
+          <ul className="list-disc space-y-2 pl-5 
+">
             <li>Real estate teams, brokers, and solo agents handling consistent inbound leads</li>
             <li>Investors (wholesaling, fix & flip, buy-and-hold) running lead pipelines</li>
             <li>Teams using GoHighLevel (or willing to move into it)</li>
@@ -125,7 +112,8 @@ export default function Home() {
 
         {/* 2) PROBLEMS I SOLVE */}
         <Section title="2) Problems I Solve">
-          <ul className="space-y-2 text-slate-700">
+          <ul className="space-y-2 
+">
             {[
               "Leads go cold because replies are slow (speed-to-lead is inconsistent)",
               "Leads aren’t routed/assigned properly, so nobody owns the follow-up",
@@ -134,7 +122,7 @@ export default function Home() {
               "No reporting — decisions are based on guesswork, not data",
             ].map((item) => (
               <li key={item} className="flex gap-2">
-                <span className="mt-1 text-slate-900">❌</span>
+                <span className="mt-1 text-slate-900 dark:text-slate-100">❌</span>
                 <span>{item}</span>
               </li>
             ))}
@@ -151,7 +139,7 @@ export default function Home() {
             <ResultCard title="More Booked Calls" desc="Booking + confirmations + reminders." />
           </div>
 
-          <p className="mt-4 text-sm text-slate-600">
+          <p className="mt-4 text-sm ">
             These are the exact levers that increase conversion without increasing ad spend.
           </p>
         </Section>
@@ -187,7 +175,7 @@ export default function Home() {
             />
           </div>
 
-          <p className="mt-4 text-sm text-slate-600">
+          <p className="mt-4 text-sm ">
             Tools are the infrastructure. You’re paying for fewer missed leads and more booked appointments.
           </p>
         </Section>
@@ -197,7 +185,8 @@ export default function Home() {
         {/* 4) PROOF / SAMPLES */}
         <Section title="4) Proof / Samples" id="proof">
           <div className="rounded-2xl border border-slate-200 p-5">
-            <p className="text-slate-700">
+            <p className="
+">
               Replace these with your screenshots as you build them. Even if you’re starting out, mock demos are
               acceptable and strongly recommended.
             </p>
@@ -221,9 +210,11 @@ export default function Home() {
               />
             </div>
 
-            <div className="mt-5 rounded-xl bg-slate-50 p-4">
-              <p className="text-sm font-medium text-slate-900">Proof checklist (what to capture in GoHighLevel):</p>
-              <ul className="mt-2 list-disc space-y-1 pl-5 text-sm text-slate-700">
+            <div className="mt-5 rounded-xl bg-slate-50 p-4 dark:bg-slate-900/40">
+              <p className="text-sm font-medium text-slate-900 dark:text-slate-100">
+Proof checklist (what to capture in GoHighLevel):</p>
+              <ul className="mt-2 list-disc space-y-1 pl-5 text-sm 
+">
                 <li>Pipeline view (stages visible)</li>
                 <li>Workflow canvas (trigger + actions)</li>
                 <li>Calendar settings + confirmation screen</li>
@@ -237,7 +228,8 @@ export default function Home() {
 
         {/* 5) PROCESS */}
         <Section title="5) Process (How I Work)">
-          <ol className="list-decimal space-y-2 pl-5 text-slate-700">
+          <ol className="list-decimal space-y-2 pl-5 
+">
             <li>Discovery: lead sources, goals, current follow-up process</li>
             <li>Audit: CRM setup, pipeline stages, response speed, leaks</li>
             <li>Build: pipeline + fields + tags + routing + automations</li>
@@ -286,7 +278,7 @@ export default function Home() {
             />
           </div>
 
-          <p className="mt-4 text-sm text-slate-600">
+          <p className="mt-4 text-sm ">
             Final scope depends on your lead sources and how complex routing/follow-up needs to be.
           </p>
         </Section>
@@ -294,43 +286,41 @@ export default function Home() {
         <Divider />
 
         {/* 7) CTA */}
-        <section id="cta" className="rounded-2xl border border-slate-200 p-6">
-          <h2 className="text-xl font-semibold">7) Call to Action</h2>
-          <p className="mt-2 text-slate-700">
-            If you want fewer missed leads and faster follow-up in GoHighLevel, apply below. I reply within 24 hours.
-          </p>
+        <section
+  id="cta"
+  className="scroll-mt-24 rounded-3xl border border-slate-200 bg-slate-50 p-8"
+>
 
-          <div className="mt-5 grid gap-3">
-            <a
-              href="https://your-application-form-link.com"
-              className="inline-flex items-center justify-center rounded-xl bg-slate-900 px-5 py-3 text-sm font-medium text-white hover:bg-slate-800"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Apply to Work With Me
-            </a>
+          <h2 className="text-xl font-semibold text-slate-900 dark:text-slate-100">7) Apply to Work With Me</h2>
+<p className="mt-2 
+">
+  Fill out the form below. I review applications daily and reply within 24 hours.
+</p>
 
-            <a
-              href="https://your-calendar-link.com"
-              className="inline-flex items-center justify-center rounded-xl border border-slate-300 px-5 py-3 text-sm font-medium text-slate-900 hover:bg-slate-50"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Book a Discovery Call
-            </a>
-          </div>
+<div className="mt-6 overflow-hidden rounded-2xl border border-slate-200 bg-white">
+  <iframe
+    src="https://docs.google.com/forms/d/e/1FAIpQLSenAByqKcfFyPCVW25_zGEb7d3B02T_jZXXx_YGY280uFRdGg/viewform?usp=header"
+    className="h-[820px] w-full"
+    loading="lazy"
+  />
+</div>
 
-          <div className="mt-6 rounded-xl bg-slate-50 p-4">
-            <p className="text-sm font-medium text-slate-900">Application questions:</p>
-            <ul className="mt-2 list-disc space-y-1 pl-5 text-sm text-slate-700">
-              <li>Where do your leads come from? (FB leads, PPC, Zillow, referrals, etc.)</li>
-              <li>What’s your biggest follow-up issue right now?</li>
-              <li>Do you want a one-time build or monthly optimization?</li>
-            </ul>
-          </div>
+<p className="mt-4 text-xs text-slate-500">
+  Trouble loading?{" "}
+  <a
+    href="https://docs.google.com/forms/d/e/1FAIpQLSenAByqKcfFyPCVW25_zGEb7d3B02T_jZXXx_YGY280uFRdGg/viewform?usp=header"
+    target="_blank"
+    rel="noreferrer"
+    className="underline"
+  >
+    Open the form in a new tab
+  </a>
+</p>
+
         </section>
 
-        <footer className="py-10 text-center text-xs text-slate-500">
+        <footer className="py-12 text-center text-xs text-slate-400">
+
           © {new Date().getFullYear()} • Real Estate Lead Systems • GoHighLevel Specialist
         </footer>
       </div>
@@ -343,19 +333,20 @@ export default function Home() {
 function StickyCta() {
   return (
     <div className="fixed bottom-4 left-0 right-0 z-50 px-4">
-      <div className="mx-auto flex max-w-3xl items-center justify-between gap-3 rounded-2xl border border-slate-200 bg-white/90 p-3 shadow-sm backdrop-blur">
+      <div className="mx-auto flex max-w-3xl items-center justify-between gap-3 rounded-2xl border border-slate-200 bg-white/95 p-3 shadow-md backdrop-blur dark:border-slate-700 dark:bg-slate-800/95">
         <div className="min-w-0">
-          <p className="truncate text-sm font-semibold text-slate-900">
+          <p className="truncate text-sm font-semibold text-slate-900 dark:text-slate-100">
             Ready to stop losing leads in GoHighLevel?
           </p>
-          <p className="truncate text-xs text-slate-600">
+          <p className="truncate text-xs  dark:text-slate-400">
             Speed-to-lead + routing + follow-up automation
           </p>
         </div>
         <div className="flex shrink-0 gap-2">
           <a
             href="#cta"
-            className="inline-flex items-center justify-center rounded-xl bg-slate-900 px-4 py-2 text-xs font-medium text-white hover:bg-slate-800"
+            className="inline-flex items-center justify-center rounded-xl border border-slate-300 px-4 py-2 text-xs font-medium text-slate-900 hover:bg-slate-50 dark:border-slate-600 dark:text-slate-200 dark:hover:bg-slate-700"
+
           >
             Apply
           </a>
@@ -372,7 +363,8 @@ function StickyCta() {
 }
 
 function Divider() {
-  return <hr className="my-10 border-slate-200" />;
+  return <hr className="my-10 border-slate-200 dark:border-slate-700" />;
+
 }
 
 function Section({
@@ -394,45 +386,97 @@ function Section({
 
 function Badge({ children }: { children: React.ReactNode }) {
   return (
-    <div className="rounded-2xl border border-slate-200 px-4 py-2 text-sm text-slate-700">
+    <div className="rounded-xl border border-slate-200 bg-slate-50 px-4 py-2 text-sm  dark:border-slate-700 dark:bg-slate-900/40 dark:text-slate-300">
+
       {children}
     </div>
   );
 }
 
-function StatCard({ title, value, note }: { title: string; value: string; note: string }) {
+// =====================
+// CARD COMPONENTS
+// =====================
+
+function StatCard({
+  title,
+  value,
+  note,
+}: {
+  title: string;
+  value: string;
+  note: string;
+}) {
   return (
-    <div className="rounded-2xl border border-slate-200 p-4">
-      <p className="text-xs font-medium text-slate-500">{title}</p>
-      <p className="mt-1 text-base font-semibold">{value}</p>
-      <p className="mt-1 text-sm text-slate-600">{note}</p>
+    <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm transition-all duration-200 ease-out hover:-translate-y-0.5 hover:shadow-md dark:border-slate-700 dark:bg-slate-800">
+      <p className="text-xs font-medium text-slate-500 dark:text-slate-400">
+        {title}
+      </p>
+      <p className="mt-1 text-base font-semibold text-slate-900 dark:text-slate-100">
+        {value}
+      </p>
+      <p className="mt-1 text-sm  dark:text-slate-400">
+        {note}
+      </p>
     </div>
   );
 }
 
-function ResultCard({ title, desc }: { title: string; desc: string }) {
+
+function ResultCard({
+  title,
+  desc,
+}: {
+  title: string;
+  desc: string;
+}) {
   return (
-    <div className="rounded-2xl border border-slate-200 p-4">
-      <p className="text-sm font-semibold">{title}</p>
-      <p className="mt-1 text-sm text-slate-700">{desc}</p>
+    <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm transition-all duration-200 ease-out hover:-translate-y-0.5 hover:shadow-md dark:border-slate-700 dark:bg-slate-800">
+      <p className="text-sm font-semibold text-slate-900 dark:text-slate-100">
+        {title}
+      </p>
+      <p className="mt-1 text-sm  dark:text-slate-400">
+        {desc}
+      </p>
     </div>
   );
 }
 
-function FeatureCard({ title, desc }: { title: string; desc: string }) {
+
+function FeatureCard({
+  title,
+  desc,
+}: {
+  title: string;
+  desc: string;
+}) {
   return (
-    <div className="rounded-2xl border border-slate-200 p-5">
-      <p className="font-semibold">{title}</p>
-      <p className="mt-2 text-sm leading-relaxed text-slate-700">{desc}</p>
+    <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition-all duration-200 ease-out hover:-translate-y-0.5 hover:shadow-md dark:border-slate-700 dark:bg-slate-800">
+      <p className="font-semibold text-slate-900 dark:text-slate-100">
+        {title}
+      </p>
+      <p className="mt-2 text-sm leading-relaxed  dark:text-slate-400">
+        {desc}
+      </p>
     </div>
   );
 }
 
-function ProofItem({ title, desc }: { title: string; desc: string }) {
+
+function ProofItem({
+  title,
+  desc,
+}: {
+  title: string;
+  desc: string;
+}) {
   return (
-    <div className="rounded-2xl border border-slate-200 p-4">
-      <p className="text-sm font-semibold">{title}</p>
-      <p className="mt-1 text-sm text-slate-700">{desc}</p>
+    <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm transition-all duration-200 ease-out hover:-translate-y-0.5 hover:shadow-md dark:border-slate-700 dark:bg-slate-800">
+      <p className="text-sm font-semibold text-slate-900 dark:text-slate-100">
+        {title}
+      </p>
+      <p className="mt-1 text-sm  dark:text-slate-400">
+        {desc}
+      </p>
     </div>
   );
 }
@@ -449,10 +493,23 @@ function PricingCard({
   highlight: boolean;
 }) {
   return (
-    <div className={["rounded-2xl border p-5", highlight ? "border-slate-900" : "border-slate-200"].join(" ")}>
-      <p className="text-sm font-semibold">{title}</p>
-      <p className="mt-2 text-2xl font-semibold">{price}</p>
-      <ul className="mt-4 list-disc space-y-2 pl-5 text-sm text-slate-700">
+    <div
+      className={[
+        "rounded-2xl border bg-white p-5 shadow-sm transition-all duration-200 ease-out hover:-translate-y-1 hover:shadow-md",
+        highlight
+          ? "border-slate-900 dark:border-slate-300"
+          : "border-slate-200 dark:border-slate-700",
+        "dark:bg-slate-800",
+      ].join(" ")}
+    >
+      <p className="text-sm font-semibold text-slate-900 dark:text-slate-100">
+        {title}
+      </p>
+      <p className="mt-2 text-2xl font-semibold text-slate-900 dark:text-slate-100">
+        {price}
+      </p>
+
+      <ul className="mt-4 list-disc space-y-2 pl-5 text-sm  dark:text-slate-400">
         {bullets.map((b) => (
           <li key={b}>{b}</li>
         ))}
