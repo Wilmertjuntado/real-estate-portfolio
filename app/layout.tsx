@@ -4,11 +4,23 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Real Estate Lead & CRM Systems | GoHighLevel Specialist",
   description:
-    "I help real estate teams capture every lead, respond faster, automate follow-ups, and book more appointments using GoHighLevel (LeadConnector).",
+    "I help real estate teams capture every lead, respond faster, and book more appointments using GoHighLevel.",
+
+  icons: {
+    icon: [
+      { url: "/favicon.ico" },
+      { url: "/icon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/icon-16x16.png", sizes: "16x16", type: "image/png" },
+    ],
+    apple: "/apple-touch-icon.png",
+  },
+
+  manifest: "/site.webmanifest",
+
   openGraph: {
     title: "Real Estate Lead & CRM Systems | GoHighLevel Specialist",
     description:
-      "Stop losing leads. Speed-to-lead + follow-up automation + clean pipelines in GoHighLevel.",
+      "Stop losing leads. Speed-to-lead + follow-up automation + clean CRM pipeline.",
     type: "website",
   },
 };
